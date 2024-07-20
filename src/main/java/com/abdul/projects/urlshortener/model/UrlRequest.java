@@ -2,8 +2,6 @@ package com.abdul.projects.urlshortener.model;
 
 import lombok.*;
 
-import java.sql.Date;
-
 
 @NoArgsConstructor
 @EqualsAndHashCode
