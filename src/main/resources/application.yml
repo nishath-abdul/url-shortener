@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: urlshortener
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/users?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: admin0123
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  security:
+    user:
+      password: password
+    basic:
+      enable: false
+    ignored: ignored=/**
+server:
+  port: 8090
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.hibernate.type: DEBUG
+    org.hibernate.sql: DEBUG
+    com.abdul.projects.urlshortener : DEBUG
+    com.zaxxer.hikari: TRACE
