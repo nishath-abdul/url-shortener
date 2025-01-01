@@ -10,7 +10,7 @@ public class MD5Utils {
 
     private static int SHORT_URL_CHAR_SIZE=7;
 
-    public static String convert(String longURL) {
+   /* public static String convert(String longURL) {
         try {
             // Create MD5 Hash
             MessageDigest digest = MessageDigest.getInstance("MD5");
@@ -37,5 +37,24 @@ public class MD5Utils {
          //   counter++;
         }
         return hash;
+    }*/
+   public static String shortenURL(String longURL) {
+       try {
+           MessageDigest md = MessageDigest.getInstance("MD5");
+           md.update(longURL.getBytes());
+           byte[] digest = md.digest();
+           return bytesToHex(digest).substring(0, longURL.length());
+       } catch (NoSuchAlgorithmException e) {
+           return null;
+       }
+   }
+
+    private static String bytesToHex(byte[] bytes) {
+        StringBuilder result = new StringBuilder();
+        for (byte b : bytes) {
+            result.append(String.format("%02x", b));
+        }
+        return result.toString();
     }
+
 }

@@ -31,7 +31,7 @@ public class UrlService {
         urlData.setExpiresDate(new Date(timeStamp + TimeUnit.MINUTES.toMillis(5)));
 
         var urlRecord = urlShortenerRepository.save(urlData);
-        return MD5Utils.generateRandomShortUrl(url);
+        return MD5Utils.shortenURL(url);
        // return md5Utils.
        // return baseConversion.encode(urlRecord.getId());
     }

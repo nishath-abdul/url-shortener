@@ -20,6 +20,8 @@ spring:
     ignored: ignored=/**
 server:
   port: 8090
+  servlet:
+    context-path: /urlshortener
 
 logging:
   level:
