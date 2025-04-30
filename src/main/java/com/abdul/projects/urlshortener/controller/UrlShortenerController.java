@@ -3,10 +3,7 @@ package com.abdul.projects.urlshortener.controller;
 import com.abdul.projects.urlshortener.model.UrlRequest;
 import com.abdul.projects.urlshortener.service.UrlService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1")
@@ -16,6 +13,11 @@ public class UrlShortenerController {
 
     public UrlShortenerController(UrlService urlService) {
         this.urlService = urlService;
+    }
+
+    @GetMapping(value= "/test")
+    public String test(){
+        return "Health is UP and Running";
     }
 
     @PostMapping(value = "url/shortener")
